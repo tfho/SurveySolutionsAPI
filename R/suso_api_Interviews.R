@@ -63,7 +63,7 @@ suso_getAllInterviewQuestionnaire <- function(server= suso_get_api_key("susoServ
     workspace<-.ws_default(ws = workspace)
     ## Define API
     server<-httr::parse_url((server))
-    server$scheme<-"https"
+    server$scheme<-"http"
     server$path<-file.path(workspace,"api", "v1", "interviews", fsep = "/")
     server$query<-list(questionnaireId = questID,
                        questionnaireVersion = version,
@@ -145,7 +145,7 @@ suso_getAllAnswerInterview <- function(server= suso_get_api_key("susoServer"),
     workspace<-.ws_default(ws = workspace)
     ## Define API
     server<-httr::parse_url(paste0(server))
-    server$scheme<-"https"
+    server$scheme<-"http"
     server$path<-file.path(workspace,"api", "v1", "interviews", intID, fsep = "/")
     server<-build_url(server)
     ## authentication
@@ -194,7 +194,7 @@ suso_getAllHistoryInterview <- function(server= suso_get_api_key("susoServer"),
     workspace<-.ws_default(ws = workspace)
     ## Define API
     server<-httr::parse_url(paste0(server))
-    server$scheme<-"https"
+    server$scheme<-"http"
     server$path<-file.path(workspace,"api", "v1", "interviews", intID, "history")
     ## authentication
     auth<-authenticate(apiUser, apiPass, type = "basic")
@@ -251,7 +251,7 @@ suso_get_stats_interview<-function(server= suso_get_api_key("susoServer"),
     workspace<-.ws_default(ws = workspace)
     ## Define API
     server<-httr::parse_url(paste0(server))
-    server$scheme<-"https"
+    server$scheme<-"http"
     ## authentication
     auth<-authenticate(apiUser, apiPass, type = "basic")
 
@@ -351,7 +351,7 @@ suso_patchRejectInterview <- function(server= suso_get_api_key("susoServer"),
     workspace<-.ws_default(ws = workspace)
     ## Define the api
     url <- parse_url(server)
-    url$scheme <- "https"
+    url$scheme <- "http"
     url$path<-file.path(workspace,"api", "v1", "interviews", intID, reject, fsep = "/")
     url$query <- list(comment = comment, responsibleId = new_uid)
     ## authentication
@@ -433,7 +433,7 @@ suso_patchApproveInterview <- function(server= suso_get_api_key("susoServer"),
     workspace<-.ws_default(ws = workspace)
     ## Define the api
     url <- parse_url(server)
-    url$scheme <- "https"
+    url$scheme <- "http"
     url$path<-file.path(workspace,"api", "v1", "interviews", intID, approve, fsep = "/")
     url$query <- list(comment = comment)
     ## authentication
