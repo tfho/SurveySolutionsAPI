@@ -147,7 +147,7 @@ suso_PwCheck<-function(server=suso_get_api_key("susoServer"),
   workspace<-.ws_default(ws = workspace)
   ## Define the api
   url <- httr::parse_url(url = server)
-  url$scheme <- "https"
+  url$scheme <- "http"
   url$path <- file.path(workspace, "api", "v1", "supervisors")
   url$query<-"limit=200"
   ## Authentication
