@@ -45,7 +45,7 @@ suso_getWorkspace <- function(server = suso_get_api_key("susoServer"),
   aJsonFile <- tempfile(fileext = ".json")
   # Define the API
   url <- httr::parse_url(url = server)
-  url$scheme <- "https"
+  url$scheme <- "http"
   # Set the authentication
   auth<-authenticate(apiUser, apiPass, type = "basic")
 
@@ -128,7 +128,7 @@ suso_createWorkspace <- function(server = suso_get_api_key("susoServer"),
   aJsonFile <- tempfile(fileext = ".json")
   # Define the API
   url <- httr::parse_url(url = server)
-  url$scheme <- "https"
+  url$scheme <- "http"
   # Set the authentication
   auth<-authenticate(apiUser, apiPass, type = "basic")
 
@@ -202,7 +202,7 @@ suso_assignWorkspace <- function(server = suso_get_api_key("susoServer"),
   aJsonFile <- tempfile(fileext = ".json")
   # Define the API
   url <- httr::parse_url(url = server)
-  url$scheme <- "https"
+  url$scheme <- "http"
   # Set the authentication
   auth<-authenticate(apiUser, apiPass, type = "basic")
 
