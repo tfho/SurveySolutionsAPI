@@ -49,7 +49,7 @@ suso_getQuestDetails <- function(server = suso_get_api_key("susoServer"),
     aJsonFile <- tempfile(fileext = ".json")
     ## Define the api
     url <- httr::parse_url(url = server)
-    url$scheme <- "https"
+    url$scheme <- "http"
     url$path <- file.path(workspace, "api", "v1", "questionnaires")#"primary/api/v1/questionnaires"
     ## Authorization
     auth<-authenticate(usr, pass, type = "basic")
