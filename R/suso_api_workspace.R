@@ -56,8 +56,8 @@ suso_getWorkspace <- function(server = suso_get_api_key("susoServer"),
     ## 1.2 call
     test_detail <- GET(url = build_url(url),
                        auth,
-                       httr::config(ssl_verifypeer = FALSE),
-                       httr::write_disk(aJsonFile, overwrite = T))
+                       httr::write_disk(aJsonFile, overwrite = T),
+                       config = httr::config(ssl_verifypeer = FALSE, ssl_verifyhost = FALSE))
     check_response(test_detail)
     test_json <- jsonlite::fromJSON(aJsonFile)
     test_json<-data.table(test_json$Workspaces)
