@@ -85,7 +85,7 @@ suso_export<-function(server= suso_get_api_key("susoServer"),
   workspace<-.ws_default(ws = workspace)
   ##  BASE URL
   url<-parse_url((server))
-  url$scheme<-"https"
+  url$scheme<-"http"
   ##  QUEST ID
   quid=paste0(stringr::str_replace_all(questID, "-", ""), "$", version)
   url$path<-file.path(workspace,"api", "v2", "export")
