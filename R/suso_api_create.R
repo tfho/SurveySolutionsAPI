@@ -32,7 +32,7 @@ suso_createASS <- function(df = UPLOADdataCHECK,
     # 1. create variables
     ##  BASE URL
     url<-httr::parse_url(paste0(server))
-    url$scheme<-"https"
+    url$scheme<-"http"
     url$path<-file.path(workspace,"api", "v1", "assignments")
     # Set the authentication
     auth<-authenticate(apiUser, apiPass, type = "basic")
