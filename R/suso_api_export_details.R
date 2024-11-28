@@ -30,7 +30,7 @@ suso_details_lastexport <- function(server = suso_get_api_key("susoServer"),
 
     ## BASE URL
     url <- parse_url(url = server)
-    url$scheme <- "https"
+    url$scheme <- "http"
     # Set the authentication
     auth<-authenticate(apiUser, apiPass, type = "basic")
 
