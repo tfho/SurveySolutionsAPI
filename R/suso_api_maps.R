@@ -63,7 +63,7 @@ suso_mapupload <- function(server= suso_get_api_key("susoServer"),
   }
 
   url <- httr::parse_url(server)
-  url$scheme <- "https"
+  url$scheme <- "http"
   url$path<-"graphql"
   auth <- httr::authenticate(apiUser, apiPass, type = "basic")
   # define the mutation
@@ -166,7 +166,7 @@ suso_mapinfo <- function(server= suso_get_api_key("susoServer"),
 
   # build the endpoint
   url <- httr::parse_url(server)
-  url$scheme <- "https"
+  url$scheme <- "http"
   url$path<-"graphql"
 
   # authentication
@@ -346,7 +346,7 @@ suso_mapassign <- function(server= suso_get_api_key("susoServer"),
 
   # build the endpoint
   url <- httr::parse_url(server)
-  url$scheme <- "https"
+  url$scheme <- "http"
   url$path<-"graphql"
 
   # authentication
