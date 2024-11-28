@@ -81,7 +81,7 @@ suso_get_assignments<-function(questID = NULL,
   # 1. create variables
   ##  BASE URL
   url<-httr::parse_url(paste0(server))
-  url$scheme<-"https"
+  url$scheme<-"http"
   url$path<-file.path(workspace,"api", "v1", "assignments")
   ## Authenticate
   auth<-authenticate(apiUser, apiPass, type = "basic")
@@ -295,7 +295,7 @@ suso_set_assignments<-function(server = suso_get_api_key("susoServer"),
 
   ##  BASE URL
   url<-httr::parse_url(url = server)
-  url$scheme<-"https"
+  url$scheme<-"http"
   url$path<-file.path(workspace,"api", "v1", "assignments")
   url<-modify_url(url, path = file.path(url$path, AssId, operations.type))
 
