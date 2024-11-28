@@ -29,7 +29,7 @@ suso_get_stats <- function(server = suso_get_api_key("susoServer"), apiUser = su
     questID <- str_remove_all(questID, "-")
     ## Define server
     server<-parse_url(server)
-    server$scheme <- "https"
+    server$scheme <- "http"
     ## Define the api
     server$path<-file.path(workspace, "api", "v1", "statistics")
     ## Authentication
@@ -81,7 +81,7 @@ suso_getQuestionsQuestionnaire <- function(server = suso_get_api_key("susoServer
     questID <- str_remove_all(questID, "-")
     ## Define server
     server<-parse_url(server)
-    server$scheme <- "https"
+    server$scheme <- "http"
     ## Define the api
     server$path<-file.path(workspace,"api", "v1", "statistics", "questions")
     ## Authentication
