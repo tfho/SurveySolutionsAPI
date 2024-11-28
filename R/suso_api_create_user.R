@@ -36,7 +36,7 @@ suso_createUSER <- function(userlist = NULL,
   # 1. create variables
   ##  BASE URL
   url<-httr::parse_url(paste0(server))
-  url$scheme<-"https"
+  url$scheme<-"http"
   url$path<-file.path(workspace,"api", "v1", "users")
   # Set the authentication
   auth<-httr::authenticate(apiUser, apiPass, type = "basic")
