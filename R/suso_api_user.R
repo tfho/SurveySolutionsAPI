@@ -30,7 +30,7 @@ suso_getSV <- function(url=suso_get_api_key("susoServer"),
     workspace<-.ws_default(ws=workspace)
     ##  BASE URL
     url<-parse_url(suso_get_api_key("susoServer"))
-    url$scheme<-"https"
+    url$scheme<-"http"
     url$path<-file.path(workspace,"api", "v1", "supervisors", fsep = "/")
     url$query<-list(limit = 200)
     # Set the authentication
@@ -83,7 +83,7 @@ suso_getINT <- function(url=suso_get_api_key("susoServer"),
     workspace<-.ws_default(ws = workspace)
     ##  BASE URL
     url<-httr::parse_url(paste0(url))
-    url$scheme<-"https"
+    url$scheme<-"http"
     url$path<-file.path(workspace, "api", "v1", "supervisors", sv_id, "interviewers", fsep = "/")
     url$query<-list(limit = 200)
     ## Authentication
@@ -131,7 +131,7 @@ suso_getINT_info<-function(url=suso_get_api_key("susoServer"), usr = suso_get_ap
     workspace<-.ws_default(ws = workspace)
     ##  BASE URL
     url<-httr::parse_url(paste0(url))
-    url$scheme<-"https"
+    url$scheme<-"http"
     url$path<-file.path(workspace,"api", "v1", "interviewers", int_id, fsep = "/")
     auth<-authenticate(usr, pass, type = "basic")
     test_detail <- GET(url = build_url(url = url), auth)
@@ -204,7 +204,7 @@ suso_getINT_log<-function(url=suso_get_api_key("susoServer"), usr = suso_get_api
     workspace<-.ws_default(ws = workspace)
     ##  BASE URL
     url<-httr::parse_url(paste0(url))
-    url$scheme<-"https"
+    url$scheme<-"http"
     url$path<-file.path(workspace, "api", "v1", "interviewers", int_id, "actions-log", fsep = "/")
 
     # check start/end & format
@@ -259,7 +259,7 @@ suso_getUSR<-function(url=suso_get_api_key("susoServer"), usr = suso_get_api_key
     workspace<-.ws_default(ws = workspace)
     ##  BASE URL
     url<-httr::parse_url(paste0(url))
-    url$scheme<-"https"
+    url$scheme<-"http"
     url$path<-file.path(workspace,"api", "v1", "users", uid, fsep = "/")
     auth<-authenticate(usr, pass, type = "basic")
     test_detail <- GET(url = build_url(url = url), auth)
@@ -314,7 +314,7 @@ suso_archUSR<-function(url=suso_get_api_key("susoServer"), usr = suso_get_api_ke
     workspace<-.ws_default(ws = workspace)
     ##  BASE URL
     url<-httr::parse_url(paste0(url))
-    url$scheme<-"https"
+    url$scheme<-"http"
     arch<-ifelse(archive, "archive", "unarchive")
     url$path<-file.path(workspace,"api", "v1", "users", uid, arch, fsep = "/")
     test_detail <- PATCH(url = build_url(url = url), authenticate(usr, pass, type = "basic"))
