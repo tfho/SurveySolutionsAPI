@@ -57,8 +57,8 @@ suso_set_key <- function(
   # get options
   options <- getOption("SurveySolutionsAPI")
   # sanitize string to ssl (http?)
-  suso_server<-ifelse(stringr::str_count(suso_server, "https://")==1,
-                      suso_server, paste0("https://", suso_server))
+  suso_server<-ifelse(stringr::str_count(suso_server, "http://")==1,
+                      suso_server, paste0("http://", suso_server))
   # add to object
   options[['suso']][['susoServer']] <- suso_server
   options[['suso']][['susoUser']] <- suso_user
